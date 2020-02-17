@@ -1,0 +1,62 @@
+body{
+    box-sizing: border-box;
+    background-color: red;
+    margin-top: 0px;
+}
+#wrapper {
+    width: 1200px;
+    height: 900px;
+    background-color: green;
+    margin: 0 auto;
+    
+}
+#tool{
+    width: 100%;
+    height: 100px;
+    background: yellow;
+}
+#gameArea{
+    width: 800px;
+    height: 450px;
+    background: turquoise;
+    margin: 0 auto;
+    margin-top: 50px;
+   
+}
+#ball{
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    border: 2px solid black;
+    background: red;
+    position: absolute;
+    
+}
+.hole{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: blue;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 600px;
+}
+
+.start{
+    padding: 12px 24px;
+    border: 1px solid #a12727;
+    border-radius: 8px;
+    background: #ff4a4a;
+    text-shadow: #591717 1px 1px 1px;
+    color: #ffffff;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    margin: 10px auto;
+    width: 200px;
+    text-align: center;
+}
+.start:hover{
+    background: #ff5959;
+}
