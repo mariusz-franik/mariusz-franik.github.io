@@ -14,7 +14,7 @@ window.onload = function(){
         e.target.style.cursor = "not-allowed";
 
         //obliczanie czasu
-        timeinterval = setInterval(function(){
+        timeinterval = setInterval(function(e){
             time += 1;
             let sec = time % 60;
             let min = (time - time % 60) / 60;
@@ -36,8 +36,7 @@ window.onload = function(){
             left += orientation.y/5;
             top += orientation.x/5;
 
-            if(left>=950||left<=205||top>=565||top<=170){
-                gameOver();
+            if(left>=1350||left<=200||top>=560||top<=162){
                 return;
             }
 
@@ -50,8 +49,8 @@ window.onload = function(){
 
     //orientacja urządzenia
     window.addEventListener("deviceorientation",function(e){
-        orientation.x = e.beta;
-        orientation.y = e.gamma;
+        orientation.x = e.gamma;
+        orientation.y = e.beta;
     })
 
     //sprawdzanie odległości piłki od dziury
@@ -64,23 +63,9 @@ window.onload = function(){
 
         let distance = Math.sqrt(Math.pow(ballX-holeX,2)+Math.pow(ballY-holeY,2));
 
-        if(distance<20)
+        if(distance<10)
             wygrana();
     }
-
-    //przegrana
-    // function gameOver(){
-    //     clearInterval(timeinterval)
-    //     clearInterval(gameinterval)
-    //     timeinterval = 0;
-    //     gameinterval = 0;
-    //     time = 0;
-    //     document.querySelector(".start").style.cursor = "pointer";
-    //     alert("game over");
-    //     ball.style.top = "320px";
-    //     ball.style.left = "320px";
-    // }
-
     //wyswietlenie komubikatu o wygranej
     function wygrana(){
         clearInterval(timeinterval)
@@ -89,7 +74,7 @@ window.onload = function(){
         gameinterval = 0;
         time = 0;
         document.querySelector(".start").style.cursor = "pointer";
-        alert("wygrałeś");
+        alert("Gratulacje! Spróbuj ponownie - tym razem szybciej :)");
         ball.style.top = "180px";
         ball.style.left = "215px";
     }
